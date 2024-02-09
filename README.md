@@ -34,3 +34,6 @@
 
 8. Intalar a lib sonner:
    8.1 `npm install sonner`.
+
+9. para utilizar SpeechRecognitionEvent API e o typeScript entender vamos instalar :
+   9.1 `npm install -D @types/dom-speech-recognition`.

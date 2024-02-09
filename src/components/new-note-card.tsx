@@ -7,10 +7,10 @@ interface NewNoteProps {
   onNoteCreated: (content: string) => void;
 }
 
-// const SpeechRecognitionAPI =
-//   window.SpeechRecognition || window.webkitSpeechRecognition;
+const SpeechRecognitionAPI =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
 
-// const speechRecognition = new SpeechRecognitionAPI();
+const speechRecognition = new SpeechRecognitionAPI();
 
 export function NewNoteCard({ onNoteCreated }: NewNoteProps) {
   const [isRecording, setIsRecording] = useState(false);
@@ -56,32 +56,32 @@ export function NewNoteCard({ onNoteCreated }: NewNoteProps) {
     setIsRecording(true);
     setShouldShowOnboarding(false);
 
-    // speechRecognition.lang = "pt-BR";
-    // speechRecognition.continuous = true;
-    // speechRecognition.maxAlternatives = 1;
-    // speechRecognition.interimResults = true;
+    speechRecognition.lang = "pt-BR";
+    speechRecognition.continuous = true;
+    speechRecognition.maxAlternatives = 1;
+    speechRecognition.interimResults = true;
 
-    // speechRecognition.onresult = (event) => {
-    //   const transcription = Array.from(event.results).reduce((text, result) => {
-    //     return text.concat(result[0].transcript);
-    //   }, "");
+    speechRecognition.onresult = (event) => {
+      const transcription = Array.from(event.results).reduce((text, result) => {
+        return text.concat(result[0].transcript);
+      }, "");
 
-    //   setContent(transcription);
-    // };
+      setContent(transcription);
+    };
 
-    // speechRecognition.onerror = (event) => {
-    //   console.error(event);
-    // };
+    speechRecognition.onerror = (event) => {
+      console.error(event);
+    };
 
-    // speechRecognition.start();
+    speechRecognition.start();
   }
 
   function handleStopRecording() {
     setIsRecording(false);
 
-    // if (speechRecognition !== null) {
-    //   speechRecognition.stop();
-    // }
+    if (speechRecognition !== null) {
+      speechRecognition.stop();
+    }
   }
 
   return (
