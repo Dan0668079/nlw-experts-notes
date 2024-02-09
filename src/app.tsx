@@ -1,5 +1,5 @@
-import { NewNoteCard } from "./assets/components/new-note-card";
-import { NoteCard } from "./assets/components/node-card";
+import { NewNoteCard } from "./components/new-note-card";
+import { NoteCard } from "./components/node-card";
 import logo from "./assets/logo-nlw-expert.svg";
 
 export function App() {
